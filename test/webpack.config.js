@@ -1,5 +1,5 @@
 var config = {
-   entry: './client/main.js',
+   entry: './main.js',
 
    output: {
       path:'/',
@@ -16,7 +16,7 @@ var config = {
          {
             test: /\.jsx?$/,
             exclude: /node_modules/,
-            loader: 'babel',
+            loader: 'babel-loader',
 
             query: {
                presets: ['es2015', 'react']
