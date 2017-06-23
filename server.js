@@ -30,7 +30,8 @@ app.use(cookieParser());
 
 const path = require('path');
 
-app.use(express.static(path.join('public')));
+app.use(express.static(path.join(__dirname, './client/public')));
+app.use(express.static(path.join(__dirname, './client/src')));
 
 // CSRF protection
 // app.use((req, res, next) => {
@@ -41,19 +42,35 @@ app.use(express.static(path.join('public')));
 //   res.sendStatus(406);
 // });
 
-const poses = require('./routes/poses');
-const favorites = require('./routes/favorites');
-const token = require('./routes/token');
-const users = require('./routes/users');
+const poses = require('./server/routes/poses');
+const yoga = require('./server/routes/yoga');
+const ayurveda = require('./server/routes/ayurveda');
+const academy = require('./server/routes/academy');
+const contact = require('./server/routes/contact');
+const dosha = require('./server/routes/dosha');
+const schedule = require('./server/routes/schedule');
+const store = require('./server/routes/store');
+const token = require('./server/routes/token');
+const users = require('./server/routes/users');
 
 app.use(poses);
-app.use(favorites);
+app.use(yoga);
+app.use(ayurveda);
+app.use(academy);
+app.use(contact);
+app.use(dosha);
+app.use(schedule);
+app.use(store);
 app.use(token);
 app.use(users);
 
 app.use((_req, res) => {
   res.sendStatus(404);
 });
+
+app.use('*', function(req, res, next) {
+  res.sendFile('index.html', {root: path.join(__dirname, '../client')})
+})
 
 // eslint-disable-next-line max-params
 app.use((err, _req, res, _next) => {

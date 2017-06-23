@@ -4,7 +4,7 @@ const express = require('express');
 
 // eslint-disable-next-line new-cap
 const router = express.Router();
-const knex = require('../knex');
+const knex = require('../../knex');
 const humps = require('humps')
 
 router.get('/poses', (req, res, next) => {
@@ -78,30 +78,30 @@ router.patch('/poses/:id', (req, res, next) => {
         })
 });
 
-router.delete('/poses/:id', (req, res, next) => {
-    let pose;
-
-    knex('yogapp')
-        .where('id', req.params.id)
-        .first()
-        .then((row) => {
-            if (!row) {
-                return next();
-            }
-
-            pose = row;
-
-            return knex('yogapp')
-                .del()
-                .where('id', req.params.id);
-        })
-        .then(() => {
-            delete pose.id;
-            res.send(humps.camelizeKeys(pose));
-        })
-        .catch((err) => {
-            next(err);
-        });
-});
+// router.delete('/poses/:id', (req, res, next) => {
+//     let pose;
+//
+//     knex('yogapp')
+//         .where('id', req.params.id)
+//         .first()
+//         .then((row) => {
+//             if (!row) {
+//                 return next();
+//             }
+//
+//             pose = row;
+//
+//             return knex('yogapp')
+//                 .del()
+//                 .where('id', req.params.id);
+//         })
+//         .then(() => {
+//             delete pose.id;
+//             res.send(humps.camelizeKeys(pose));
+//         })
+//         .catch((err) => {
+//             next(err);
+//         });
+// });
 
 module.exports = router;

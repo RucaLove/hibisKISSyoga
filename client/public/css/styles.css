@@ -160,11 +160,19 @@ footer.page-footer small {
 
 .lotus-top{
   top: 0%;
-  left: 32%;
+  left: 33%;
   height: 450px;
   /*top: 18%;
   left: 40%;
   height: 250px;*/
+  -webkit-animation-name: lotus;
+
+  /* Chrome, Safari, Opera */
+  -webkit-animation-duration: 2s;
+
+  /* Chrome, Safari, Opera */
+  animation-name: lotus;
+  animation-duration: 2s;
 }
 #axis:hover .lotus-bottom-move{
   transform: translate(0, -10px) scale(2);
@@ -181,4 +189,39 @@ footer.page-footer small {
   /*height: 200px;
   left: 35%;
   top: 40%;*/
+
+  -webkit-animation-name: lotus;
+
+  /* Chrome, Safari, Opera */
+  -webkit-animation-duration: 2s;
+
+  /* Chrome, Safari, Opera */
+  animation-name: lotus;
+  animation-duration: 2s;
+}
+
+@-webkit-keyframes lotus {
+  0% {
+    opacity: 100;
+    filter: alpha(opacity=1000);
+    /* For IE8 and earlier */
+  }
+  100% {
+  opacity: 0.0;
+  filter: alpha(opacity=0);
+  /* For IE8 and earlier */
+  }
+}
+
+@keyframes lotus {
+  0% {
+    opacity: 100;
+    filter: alpha(opacity=1000);
+    /* For IE8 and earlier */
+  }
+  100% {
+    opacity: 0.0;
+    filter: alpha(opacity=0);
+    /* For IE8 and earlier */
+  }
 }

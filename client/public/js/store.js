@@ -3,32 +3,32 @@
 
   $('.parallax').parallax();
 
-  $.getJSON('/favorites')
-    .done((favorites) => {
-      const $favs = $('#favorites');
+  $.getJSON('/store')
+    .done((store) => {
+      const $items = $('#store');
 
-      for (const fav of favorites) {
+      for (const item of store) {
         const $anchor = $('<a>')
           .attr({
-            href: `/book.html?id=${fav.bookId}`,
+            href: `/store.html?id=${item.storeId}`,
             'data-delay': '50',
-            'data-tooltip': fav.title
+            'data-tooltip': item.product
           })
           .tooltip();
 
         const $card = $('<div>').addClass('card');
         const $cardImage = $('<div>').addClass('card-image');
         const $col = $('<div>').addClass('col s6 m4 l3');
-        const $img = $('<img>').attr({ src: fav.coverUrl, alt: fav.title });
+        const $img = $('<img>').attr({ src: item.img, alt: item.product });
 
         $cardImage.append($img);
         $anchor.append($cardImage);
         $card.append($anchor);
         $col.append($card);
-        $favs.append($col);
+        $items.append($col);
       }
     })
     .fail(() => {
-      window.location.href = '/signup.html';
+      window.location.href = '/store.html';
     });
 })();

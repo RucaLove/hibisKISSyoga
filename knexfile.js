@@ -3,12 +3,12 @@
 module.exports = {
   development: {
     client: 'pg',
-    connection: 'postgres://localhost/yogapp'
+    connection: 'postgres://localhost/hibiskiss'
   },
 
   // test: {
   //   client: 'pg',
-  //   connection: 'postgres://localhost/_test'
+  //   connection: 'postgres://localhost/hibiskiss_test'
   // },
 
   production: {

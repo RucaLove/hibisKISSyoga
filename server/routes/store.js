@@ -4,7 +4,7 @@ const express = require('express');
 
 // eslint-disable-next-line new-cap
 const router = express.Router();
-const knex = require('../knex');
+const knex = require('../../knex');
 const humps = require('humps');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
@@ -13,29 +13,29 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const boom = require('boom')
 
-router.get('/favorites', (req, res, next) => {
+router.get('/store', (req, res, next) => {
   console.log("in faves");
   res.send({"a": "yes"});
     // if (!req.cookies.token) {
     //     return next(boom.create(401, 'Unauthorized'))
     // } else {
-    //     knex('favorites')
-    //         .join('books', 'books.id', 'book_id')
-    //         .then((favs) => {
-    //             res.send(humps.camelizeKeys(favs));
+    //     knex('store')
+    //         .join('store', 'store.id', 'store_id')
+    //         .then((item) => {
+    //             res.send(humps.camelizeKeys(item));
     //         });
     // }
 });
 
-router.get('/favorites/check', (req, res, next) => {
+router.get('/store/check', (req, res, next) => {
     // if (!req.cookies.token) {
     //     return next(boom.create(401, 'Unauthorized'));
     // } else {
-    //     let id = +req.query.bookId;
-    //     knex('favorites')
+    //     let id = +req.query.storeId;
+    //     knex('store')
     //         .where('id', id)
-    //         .then((favs) => {
-    //             if (!favs.length) {
+    //         .then((item) => {
+    //             if (!item.length) {
     //                 res.send(false);
     //             } else {
     //                 res.send(true);
@@ -44,36 +44,36 @@ router.get('/favorites/check', (req, res, next) => {
     // }
 });
 
-router.post('/favorites', (req, res, next) => {
+router.post('/store', (req, res, next) => {
     // if (!req.cookies.token) {
     //     return next(boom.create(401, 'Unauthorized'))
     // }
-    // knex.raw("select setval('favorites_id_seq', (select max(id) from favorites))")
+    // knex.raw("select setval('store_id_seq', (select max(id) from store))")
     //     .then(
-    //         knex('favorites')
+    //         knex('store')
     //         .insert({
     //             id: req.body.id,
-    //             book_id: req.body.bookId,
+    //             store_id: req.body.storeId,
     //             user_id: 1
     //         })
     //         .returning('*')
-    //         .then((favs1) => {
-    //             res.send(humps.camelizeKeys(favs1[0]));
+    //         .then((item1) => {
+    //             res.send(humps.camelizeKeys(item1[0]));
     //         })
     //     );
 });
 
-router.delete('/favorites', (req, res, next) => {
+router.delete('/store', (req, res, next) => {
   //   if (!req.cookies.token) {
   //       return next(boom.create(401, 'Unauthorized'))
   //   }
-  // knex('favorites')
-  //       .returning(['book_id', 'user_id'])
-  //       .where('book_id', req.body.bookId)
+  // knex('store')
+  //       .returning(['store_id', 'user_id'])
+  //       .where('store_id', req.body.storeId)
   //       .del()
-  //       .then((favs) => {
-  //           delete favs[0].id;
-  //           res.send(humps.camelizeKeys(favs[0]));
+  //       .then((item) => {
+  //           delete item[0].id;
+  //           res.send(humps.camelizeKeys(item[0]));
   //       })
 });
 
