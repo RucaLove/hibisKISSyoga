@@ -1,50 +1,72 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html ng-app="hibiskiss">
   <head>
     <meta charset="utf-8">
     <title>HibisKISS Yoga & Ayurveda</title>
+    <base href="/">
+
+    <!-- JQUERY -->
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
+
     <!--Import Google Icon Font-->
     <link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <!--Import materialize.css-->
-    <link type="text/css" rel="stylesheet" href="/css/materialize.min.css"  media="screen,projection"/>
+    <!-- <link type="text/css" rel="stylesheet" href="/css/materialize.min.css"  media="screen,projection"/> -->
 
     <!-- Import styles.css -->
     <link type="text/css" rel="stylesheet" href="/css/styles.css"/>
 
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <!-- <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="theme-color" content="#000000"> -->
-    <!--
-      manifest.json provides metadata used when your web app is added to the
-      homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
-    -->
-    <!-- <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
-    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico"> -->
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
   </head>
-  <body id="splash">
+  <body>
 
-    <div id="root"></div>
+        <navigation></navigation>
+        <store></store>
+        <hibiskiss></hibiskiss>
+        <ui-view></ui-view>
 
-    <!-- <div id="axis" class="container">
-      <img class="object lotus-bottom lotus-bottom-move" src="/images/lotus_bottom.png">
-      <img class="object lotus-top expand lotus-top-move" src="/images/lotus_top.png">
-    </div> -->
+    <!-- ANGULAR  CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
 
-    <!-- REACT CDN -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/react/x.y.z/react.min.js"></script> -->
-    <script src="App.test.js"></script>
+    <!-- UI-ROUTER -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.js"></script>
+
+    <!-- ANGULAR MOMENT (STUFF FOR TIME FORMATTING) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-moment/1.0.1/angular-moment.js"></script>
+
+    <!-- OUR ANGULAR CODE -->
+    <!-- MAIN APP STUFF -->
+    <script src="app.module.js"></script>
+    <script src="app.config.js"></script>
+
+    <!-- SERVICES -->
+    <script src="/services/hibiskiss.services.js"></script>
+    <script src="/services/store.services.js"></script>
+    <!-- <script src="/services/splash.services.js"></script> -->
+    <script src="/services/nav.services.js"></script>
+    <!-- <script src="/services/users.services.js"></script> -->
+    <!-- <script src="/services/poses.services.js"></script> -->
+    <!-- <script src="/services/comments.services.js"></script> -->
+    <!-- <script src="/services/contributors.services.js"></script> -->
+
+    <!-- COMPONENTS -->
+    <script src="/components/hibiskiss.component.js"></script>
+    <!-- <script src="/components/splash.component.js"></script> -->
+    <script src="/components/nav.component.js"></script>
+    <!-- <script src="/components/users.component.js"></script> -->
+    <script src="/components/store.component.js"></script>
+    <!-- <script src="/components/poses.components.js"></script> -->
+    <!-- <script src="/components/contributors.component.js"></script> -->
 
   </body>
 </html>

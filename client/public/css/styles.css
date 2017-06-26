@@ -96,6 +96,10 @@ nav ul li {
   text-transform: uppercase;
 }
 
+nav ul a {
+  display: inline;
+}
+
 main {
   flex: 1 0 auto;
 }
@@ -138,9 +142,9 @@ footer.page-footer small {
 
 /*STYLING FOR STORE*/
 
-/*.card-font {
-  font-size: 10px;
-}*/
+.card {
+  
+}
 
 /*STYLING FOR BIO*/
 .bio-pic {

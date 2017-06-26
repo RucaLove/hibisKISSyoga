@@ -14,8 +14,17 @@ const bodyParser = require('body-parser');
 const boom = require('boom')
 
 router.get('/store', (req, res, next) => {
-  console.log("in faves");
-  res.send({"a": "yes"});
+    knex('store')
+        .orderBy('id')
+        .then((item) => {
+            res.send(humps.camelizeKeys(item));
+        })
+        .catch((err) => {
+            next(err);
+        });
+});
+
+router.get('/store', (req, res, next) => {
     // if (!req.cookies.token) {
     //     return next(boom.create(401, 'Unauthorized'))
     // } else {

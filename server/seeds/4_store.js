@@ -1,13 +1,14 @@
+'use strict';
 
 exports.seed = function(knex) {
   // Deletes ALL existing entries
   return knex('store').del()
     .then(function () {
-      knex('store').insert([
+      return knex('store').insert([
         {
           id: 1,
           dosha: "Vata",
-          product: "Vata Herbal Tea Blend",
+          product_name: "Vata Herbal Tea Blend",
           img : "/images/vata-tea.jpg",
           price : "$13.00 USD",
           size : "16oz",
@@ -16,7 +17,7 @@ exports.seed = function(knex) {
         {
           id: 2,
           dosha: "Pitta",
-          product: "Pitta Herbal Tea Blend",
+          product_name: "Pitta Herbal Tea Blend",
           img : "/images/pitta-tea.jpg",
           price : "$13.00 USD",
           size : "16oz",
@@ -25,7 +26,7 @@ exports.seed = function(knex) {
         {
           id: 3,
           dosha: "Kapha",
-          product: "Kapha Herbal Tea Blend",
+          product_name: "Kapha Herbal Tea Blend",
           img : "/images/kapha-tea.jpg",
           price : "$13.00 USD",
           size : "16oz",
@@ -34,7 +35,7 @@ exports.seed = function(knex) {
         {
           id: 4,
           dosha: "Tridoshic",
-          product: "Tridoshic Herbal Tea Blend",
+          product_name: "Tridoshic Herbal Tea Blend",
           img : "/images/tridoshic-tea.jpg",
           price : "$13.00 USD",
           size : "16oz",
@@ -43,7 +44,7 @@ exports.seed = function(knex) {
         {
           id: 5,
           dosha: "Custom",
-          product: "Custom Herbal Tea Blend",
+          product_name: "Custom Herbal Tea Blend",
           img : "/images/tea.jpg",
           price : "$13.00 USD",
           size : "16oz",
@@ -52,7 +53,7 @@ exports.seed = function(knex) {
         {
           id: 6,
           dosha: "Vata",
-          product: "Vata Churna Spice Blend",
+          product_name: "Vata Churna Spice Blend",
           img : "/images/vata-churna.jpg",
           price : "$13.00 USD",
           size : "4oz",
@@ -61,7 +62,7 @@ exports.seed = function(knex) {
         {
           id: 7,
           dosha: "Pitta",
-          product: "Pitta Churna Spice Blend",
+          product_name: "Pitta Churna Spice Blend",
           img : "/images/pitta-churna.jpg",
           price : "$13.00 USD",
           size : "4oz",
@@ -70,7 +71,7 @@ exports.seed = function(knex) {
         {
           id: 8,
           dosha: "Kapha",
-          product: "Kapha Churna Spice Blend",
+          product_name: "Kapha Churna Spice Blend",
           img : "/images/kapha-churna.jpg",
           price : "$13.00 USD",
           size : "4oz",
@@ -79,7 +80,7 @@ exports.seed = function(knex) {
         {
           id: 9,
           dosha: "Tridoshic",
-          product: "Tridoshic Churna Spice Blend",
+          product_name: "Tridoshic Churna Spice Blend",
           img : "/images/tridoshic-churna.jpg",
           price : "$13.00 USD",
           size : "4oz",
@@ -88,7 +89,7 @@ exports.seed = function(knex) {
         {
           id: 10,
           dosha: "Custom",
-          product: "Custom Churna Spice Blend",
+          product_name: "Custom Churna Spice Blend",
           img : "",
           price : "$13.00 USD",
           size : "4oz",
@@ -97,7 +98,7 @@ exports.seed = function(knex) {
         {
           id: 11,
           dosha: "Vata",
-          product: "Vata Calming Abhyanga Oil",
+          product_name: "Vata Calming Abhyanga Oil",
           img : "/images/vata-abhyanga-oil.jpg",
           price : "$13.00 USD",
           size : "4oz",
@@ -106,7 +107,7 @@ exports.seed = function(knex) {
         {
           id: 12,
           dosha: "Pitta",
-          product: "Pitta Cooling Abhyanga Oil",
+          product_name: "Pitta Cooling Abhyanga Oil",
           img : "/images/pitta-abhyanga-oil.jpg",
           price : "$13.00 USD",
           size : "4oz",
@@ -115,7 +116,7 @@ exports.seed = function(knex) {
         {
           id: 13,
           dosha: "Kapha",
-          product: "Kapha Stimulating Abhyanga Oil",
+          product_name: "Kapha Stimulating Abhyanga Oil",
           img : "/images/kapha-abhyanga-oil.jpg",
           price : "$13.00 USD",
           size : "4oz",
@@ -124,7 +125,7 @@ exports.seed = function(knex) {
         {
           id: 14,
           dosha: "Tridoshic",
-          product: "Trodoshic Harmonizing Abhyanga Oil",
+          product_name: "Trodoshic Harmonizing Abhyanga Oil",
           img : "/images/tridoshic-abhyanga-oil.jpg",
           price : "$13.00 USD",
           size : "4oz",
@@ -133,7 +134,7 @@ exports.seed = function(knex) {
         {
           id: 15,
           dosha: "",
-          product: "Abhyanga Oil - 16oz Refill Bottle",
+          product_name: "Abhyanga Oil - 16oz Refill Bottle",
           img : "/images/custom-abhyanga-oil.jpg",
           price : "$50.00 USD",
           size : "16oz",
@@ -142,7 +143,7 @@ exports.seed = function(knex) {
         {
           id: 16,
           dosha: "Custom",
-          product: "Abhyanga Oil Custom Concentrate",
+          product_name: "Abhyanga Oil Custom Concentrate",
           img : "",
           price : "$10.00 USD",
           size : "2oz",
@@ -151,7 +152,7 @@ exports.seed = function(knex) {
         {
           id: 17,
           dosha: "Custom",
-          product: "Yoga Mat Refreshening Spray",
+          product_name: "Yoga Mat Refreshening Spray",
           img : "/images/spray.jpg",
           price : "$9.00 USD",
           size : "2oz",
